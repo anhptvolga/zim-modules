@@ -3,7 +3,7 @@
 # I prefer prezto aliases add put it in here.
 #
 
-function current_branch() {
+function git-branch-current() {
   local ref
   ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
   local ret=$?
