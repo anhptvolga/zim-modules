@@ -170,3 +170,7 @@ cd () {
     fi
 }
 
+alias cclip='xclip -sel clip'
+alias vclip='xclip -o -sel clip'
+alias gds='forgit::diff --staged'
+
