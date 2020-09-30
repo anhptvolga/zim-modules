@@ -161,3 +161,13 @@ dkssh() {
   docker exec -it `get_docker_id $1` /bin/bash
 }
 
+cd () {
+    if [[ -n $VIRTUAL_ENV ]]; then
+        deactivate
+    fi
+    builtin cd "$@"
+    if [[ -d .venv ]]; then
+        source .venv/bin/activate
+    fi
+}
+
