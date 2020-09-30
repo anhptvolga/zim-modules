@@ -11,7 +11,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 setopt no_share_history
 
-bindkey -v # use like vim editor
+# bindkey -v # use like vim editor
 bindkey "\e." insert-last-word
 
 autoload -U edit-command-line
@@ -54,7 +54,7 @@ export FZF_COMPLETION_OPTS='+c -x'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
-# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 
 ############################
@@ -71,7 +71,6 @@ alias cat='bat'
 alias pwdx="pwd | pbcopy"
 
 GITHUB_HOME="$HOME/github"
-FZF_BASE_DIR='/usr/local/Cellar/fzf/0.20.0'
 
 jprofiler() {
     echo $1
