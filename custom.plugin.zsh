@@ -118,6 +118,8 @@ alias rput='mcurl -X PUT -H $HJSON'
 
 # python
 alias py3='python3'
+alias ipython='ipython --TerminalInteractiveShell.editing_mode=vi'
+alias ipy='ipython'
 
 #
 # kafka tools
@@ -141,7 +143,6 @@ alias dkr='docker run'
 alias dkex='docker exec'
 alias dks='docker start'
 alias dks='docker stop'
-alias ipython='ipython --TerminalInteractiveShell.editing_mode=vi'
 
 dk_ps() {
   docker ps | awk '{ if (NR != 1) print $0, "\t",  NR-1; else print $0; } '
