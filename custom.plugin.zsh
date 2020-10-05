@@ -65,10 +65,9 @@ alias c='cat'
 alias tx='tmux'
 alias tcpu='top -o cpu'
 alias tmem='top -o mem'
-alias vv='vim'
 alias nv='nvim'
 alias cat='bat'
-alias pwdx="pwd | pbcopy"
+alias pwdx="pwd | xclip -sel clip"
 
 GITHUB_HOME="$HOME/github"
 
