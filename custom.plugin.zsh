@@ -11,7 +11,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 setopt no_share_history
 
-bindkey -v # use like vim editor
+# bindkey -v # use like vim editor
 bindkey "\e." insert-last-word
 
 autoload -U edit-command-line
@@ -54,7 +54,7 @@ export FZF_COMPLETION_OPTS='+c -x'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
-# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 
 ############################
@@ -65,13 +65,12 @@ alias c='cat'
 alias tx='tmux'
 alias tcpu='top -o cpu'
 alias tmem='top -o mem'
-alias vv='vim'
 alias nv='nvim'
 alias cat='bat'
-alias pwdx="pwd | pbcopy"
+alias pwdx="pwd | xclip -sel clip"
+alias jq='jq -C'
 
 GITHUB_HOME="$HOME/github"
-FZF_BASE_DIR='/usr/local/Cellar/fzf/0.20.0'
 
 jprofiler() {
     echo $1
@@ -86,6 +85,12 @@ jprofiler() {
 #
 alias gfmb='git pull origin "$(git-branch-current 2> /dev/null)"'
 alias gloa='glo --all'
+alias gcom='git co master'
+alias gcod='git co develop'
+alias gcoad='git co anh/develop'
+alias gcost='git co staging'
+alias grbd='git rb develop'
+alias grbm='git rb master'
 
 #
 # Maven
@@ -119,6 +124,9 @@ alias rput='mcurl -X PUT -H $HJSON'
 
 # python
 alias py3='python3'
+alias ipython='ipython --TerminalInteractiveShell.editing_mode=vi'
+alias ipy='ipython'
+alias vpy='source .venv/bin/activate'
 
 #
 # kafka tools
@@ -142,7 +150,6 @@ alias dkr='docker run'
 alias dkex='docker exec'
 alias dks='docker start'
 alias dks='docker stop'
-alias ipython='ipython --TerminalInteractiveShell.editing_mode=vi'
 
 dk_ps() {
   docker ps | awk '{ if (NR != 1) print $0, "\t",  NR-1; else print $0; } '
@@ -171,3 +178,11 @@ cd () {
     fi
 }
 
+alias cclip='xclip -sel clip'
+alias vclip='xclip -o -sel clip'
+alias gds='forgit::diff --staged'
+export FORGIT_COPY_CMD='xclip -selection clipboard'
+
+function open() {
+    xdg-open "$*" 2>/dev/null
+}
