@@ -56,6 +56,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
 export MANROFFOPT="-c"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 
 ############################
